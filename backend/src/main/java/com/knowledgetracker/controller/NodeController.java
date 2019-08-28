@@ -16,7 +16,7 @@ import com.knowledgetracker.domain.Node;
 import com.knowledgetracker.service.NodeService;
 
 @RestController
-@RequestMapping("nodes")
+@RequestMapping("${api.v1}/nodes")
 public class NodeController {
 	@Autowired
 	private NodeService nodeService;
