@@ -9,6 +9,11 @@ import {Node} from '../model/node';
 })
 export class NodeComponent implements OnInit {
   data: Node[];
+  options = {
+    allowDrag: true,
+    allowDrop: false
+  };
+  
   constructor(private nodeService: NodeService) { }
 
   ngOnInit() {
