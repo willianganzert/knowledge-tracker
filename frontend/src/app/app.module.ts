@@ -7,6 +7,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { NodeComponent } from './node/node.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TreeModule } from 'angular-tree-component';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { TreeModule } from 'angular-tree-component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TreeModule.forRoot()
+    TreeModule.forRoot(),
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
