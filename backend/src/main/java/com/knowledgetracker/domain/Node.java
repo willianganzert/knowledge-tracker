@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.knowledgetracker.domain.hibernatetypes.LongArrayUserType;
 
 @Entity
@@ -33,7 +34,7 @@ public class Node extends AuditModel{
 	
 	@Enumerated(EnumType.ORDINAL)
 	private NodeType type;
-	
+	@JsonProperty("name")
 	private String title;
 	
 	private String content;
